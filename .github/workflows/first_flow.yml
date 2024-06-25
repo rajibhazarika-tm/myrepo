@@ -1,22 +1,14 @@
 name: Practice 1
-on: [push]
+on: push
 jobs:
    lint:
     runs-on: ubuntu-latest
     steps:
        - name: checkout
-         run: echo "checkout script"
+         uses: actions/checkout@v3
+       - name: pull dependencies
+         uses: npm ci
+       - name: run lint
+         uses: npm run lint  
 
-   build:
-    needs: [lint]
-    runs-on: ubuntu-latest
-    steps:
-       - name: lint
-         run: echo "lint script"
-
-   deploy:
-    needs: [lint, build]
-    runs-on: ubuntu-latest
-    steps:
-       - name: deploy
-         run: echo "${{toJson(github.event)}}"
+   
