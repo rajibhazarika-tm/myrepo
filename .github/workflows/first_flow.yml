@@ -2,18 +2,21 @@ name: Practice 1
 on: [push]
 jobs:
    lint:
+    runs-on: ubuntu-latest
     steps:
        - name: checkout
-       - run: echo "checkout script"
+         run: echo "checkout script"
 
    build:
     needs: [lint]
+    runs-on: ubuntu-latest
     steps:
        - name: lint
-       - run: echo "lint script"
+         run: echo "lint script"
 
    deploy:
     needs: [lint, build]
+    runs-on: ubuntu-latest
     steps:
        - name: deploy
-       - run: echo "deploy script"
+         run: echo "deploy script"
