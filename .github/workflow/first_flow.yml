@@ -1,0 +1,19 @@
+name: Practice 1
+on: [push]
+jobs:
+   lint:
+    steps:
+       - name: checkout
+       - run: echo "checkout script"
+
+   build:
+    needs: [lint]
+    steps:
+       - name: lint
+       - run: echo "lint script"
+
+   deploy:
+    needs: [lint, build]
+    steps:
+       - name: deploy
+       - run: echo "deploy script"
