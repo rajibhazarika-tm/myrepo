@@ -9,6 +9,6 @@ jobs:
        - name: pull dependencies
          run: npm ci
        - name: run lint
-         run: npm lint  
+         run: npm run lint  
 
    
