@@ -2,6 +2,7 @@ name: Practice 1
 on: workflow_dispatch
 jobs:
    lint:
+    environment: dev
     runs-on: ubuntu-latest
     steps:
        - name: checkout
@@ -16,5 +17,7 @@ jobs:
          run: npm ci
        - name: run lint
          run: npm run lint  
+       - name: print secrte
+         run: ${{ secrets.MY_SECRET}}
 
    
