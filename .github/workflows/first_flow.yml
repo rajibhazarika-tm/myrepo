@@ -18,6 +18,6 @@ jobs:
        - name: run lint
          run: npm run lint  
        - name: print secrte
-         run: ${{ secrets.MY_SECRET}}
+         run: echo "${{ secrets.MY_SECRET }}"
 
    
